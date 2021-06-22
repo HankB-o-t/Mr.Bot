@@ -18,7 +18,7 @@ client.on("ready", () => {
  });
  
  client.on("message", (message) => {
-   if(message.content.startsWith("-h")) {
+   if(command === "h") {
     const embed = new Discord.MessageEmbed()
       .setTitle('Información del servidor')
       .setColor(0x5E9DE4)
@@ -32,11 +32,11 @@ client.on("ready", () => {
     message.channel.send(embed);
    }
 
-   if(message.content.startsWith("-code")) {
+   if(command === "code") {
     message.channel.send("|HackDiscord.exe|");
   }
 
-  if(message.content.startsWith("-info")) {
+  if(command === "info) {
    const embed = new Discord.MessageEmbed()
       .setTitle('Comandos Mios')
       .setColor(0x5E9DE4)
