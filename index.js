@@ -18,7 +18,7 @@ client.on("ready", () => {
  });
  
  client.on("message", (message) => {
-   if(command === "h") {
+   if(message.content.startsWith("-h")) {
     const embed = new Discord.MessageEmbed()
       .setTitle('Información del servidor')
       .setColor(0x5E9DE4)
@@ -32,11 +32,11 @@ client.on("ready", () => {
     message.channel.send(embed);
    }
 
-   if(command === "code") {
-    message.channel.send("|HackDiscord.exe|");
+   if(message.content.startsWith("-code")) {
+    message.channel.send("el codigo fuente esta en github https://github.com/HankB-o-t/Mr.Bot ");
   }
 
-  if(command === "info) {
+  if(message.content.startsWith("-info")) {
    const embed = new Discord.MessageEmbed()
       .setTitle('Comandos Mios')
       .setColor(0x5E9DE4)
