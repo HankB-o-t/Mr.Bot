@@ -10,15 +10,20 @@ app.listen(3000, () => {
 });
 
 const Discord = require("discord.js");
-const mySecret = process.env['TOKEN']
+const mySecret = process.env['TOKEN'] ///borra esto si usas algun otro hosteo que no sea repl.it///
 const client = new Discord.Client();
 
 client.on("ready", () => {
     console.log("Estoy listo!");
  });
+
+let prefix = config.prefix
+ client.on("message", (message) => {
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
  
  client.on("message", (message) => {
-   if(message.content.startsWith("-h")) {
+   if(command === "info") {
     const embed = new Discord.MessageEmbed()
       .setTitle('Información del servidor')
       .setColor(0x5E9DE4)
@@ -32,11 +37,11 @@ client.on("ready", () => {
     message.channel.send(embed);
    }
 
-   if(message.content.startsWith("-code")) {
+   if(command === "code") {
     message.channel.send("el codigo fuente esta en github https://github.com/HankB-o-t/Mr.Bot ");
   }
 
-  if(message.content.startsWith("-info")) {
+  if(command === "help") {
    const embed = new Discord.MessageEmbed()
       .setTitle('Comandos Mios')
       .setColor(0x5E9DE4)
