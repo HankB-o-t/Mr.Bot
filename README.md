@@ -8,6 +8,6 @@ Si en este bot vas a usarlo en repl.it:
 
 2-Crea un "secreto" llamado "TOKEN" y agrega la constante que aparece abajo de tu "secreto"
 
-3-Cambia lo de "client.login(config.token);" a `client.login(process.env.TOKEN);`
+3-Cambia lo de `client.login(config.token);` a `client.login(process.env.TOKEN);`
 
 con eso ya tu bot estaria listo
